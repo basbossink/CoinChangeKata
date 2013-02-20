@@ -18,7 +18,6 @@ args = ""
 watch('(.*\.scm)$') { |md| 
     files = Dir.glob(File.join(File.dirname(__FILE__),"*.scm"))
     args = files.sort { |x,y| y.casecmp(x) } + ["-b", "-q", "-r5rs-syntax", "-n" ]
-    puts args
     stdin, stdout, stderr = Open3.popen3(
         "c:/chicken/bin/csi.exe",
         *args) 
