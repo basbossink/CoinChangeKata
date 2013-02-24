@@ -15,8 +15,9 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(declare (unit change-calculator))
-
-(define (calculate-change coin-values amount)
-  '())
-
+(module change-calculator (export calculate-change)
+    (import scheme)
+    
+    (define (calculate-change coin-values amount)
+        '())
+)

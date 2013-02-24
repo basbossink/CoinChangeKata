@@ -14,24 +14,17 @@
 
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
-(declare (uses change-calculator))
+(require-extension change-calculator)
 (require-extension test)
 
 (test-begin "change-calculator-test")
 
 (define (euro-coin-set) 
-  (list (cons 'cent 1) 
-        (cons 'five-cent 5) 
-        (cons 'ten-cent 10) 
-        (cons 'twenty-cent 20) 
-        (cons 'fifty-cent 50) 
-        (cons 'euro 100) 
-        (cons 'two-euro 200)))
+  (list 1 5 10 20 50 100 200))
 
 (test 
   "When there's no change to give it should return the empty list"
   '() 
   (calculate-change (euro-coin-set) 0))
-
 
 (test-end)
