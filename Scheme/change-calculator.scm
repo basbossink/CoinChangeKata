@@ -19,5 +19,8 @@
     (import scheme chicken)
     
     (define (calculate-change coin-values amount)
-        '())
-)
+      (define (calculate-change-rec coin-values amount acc)
+        (cond ((= amount 0) acc)
+              (else (let ((coin (car coin-values)))
+                 (cons coin (calculate-change-rec coin-values (- amount coin) acc))))))
+        (calculate-change-rec coin-values amount '())))

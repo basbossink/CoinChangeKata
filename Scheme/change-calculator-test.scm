@@ -24,4 +24,9 @@
   '() 
   (calculate-change (list 1) 0))
 
+(test 
+  "When there's only one coin, it should return the correct number of coins"
+  (list 1 1) 
+  (calculate-change (list 1) 2))
+
 (test-end)
