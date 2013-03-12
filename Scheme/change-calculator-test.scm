@@ -19,12 +19,9 @@
 
 (test-begin "change-calculator-test")
 
-(define (euro-coin-set) 
-  (list 1 2 5 10 20 50 100 200))
-
 (test 
   "When there's no change to give it should return the empty list"
   '() 
-  (calculate-change (euro-coin-set) 0))
+  (calculate-change (list 1) 0))
 
 (test-end)
