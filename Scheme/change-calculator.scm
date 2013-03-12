@@ -16,7 +16,7 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 (module change-calculator (export calculate-change)
-    (import scheme)
+    (import scheme chicken)
     
     (define (calculate-change coin-values amount)
         '())
